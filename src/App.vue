@@ -5,12 +5,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-export default Vue.extend({
-  name: 'App'
-})
-</script>
+<script lang="ts" src="./App.vue.ts"></script>
 
 <style>
 #app {
