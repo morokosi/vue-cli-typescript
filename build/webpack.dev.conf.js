@@ -8,6 +8,7 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
@@ -44,7 +45,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     }
   },
-  plugins: [
+    plugins: [
+        new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
